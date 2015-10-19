@@ -2,7 +2,7 @@
 
 import Handlebars from 'handlebars';
 
-const handlebarsRuntimePath = System.normalizeSync('handlebars/handlebars.runtime', __moduleName);
+const handlebarsRuntimePath = System.normalizeSync('handlebars/../handlebars.runtime', __moduleName );
 
 export function translate(load) {
   var precompiled = Handlebars.precompile(load.source);

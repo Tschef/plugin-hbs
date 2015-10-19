@@ -1,35 +1,39 @@
 {
   "name": "plugin-hbs",
-  "description": "Handlebars template loader plugin for system.js",
-  "version": "1.2.1",
+  "description": "NPM compatible Handlebars template loader plugin for System.js",
+  "version": "1.3.0",
   "main": "hbs.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davis/plugin-hbs.git"
+    "url": "git+https://github.com/vpro/plugin-hbs.git"
+  },
+  "scripts": {
+    "test-loader": "http-server"
   },
   "keywords": [
-    "systemjs",
-    "jspm"
+    "systemjs"
   ],
-  "author": "davis",
+  "contributors": [
+    {
+      "name": "davis"
+    },
+    {
+      "name": "vpro"
+    }
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davis/plugin-hbs/issues"
+    "url": "https://github.com/vpro/plugin-hbs/issues"
   },
-  "homepage": "https://github.com/davis/plugin-hbs#readme",
-  "jspm": {
-    "main": "hbs",
-    "directories": {},
-    "dependencies": {
-      "handlebars": "github:components/handlebars.js@^4.0.2"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.4.3",
-      "babel-runtime": "npm:babel-runtime@^5.4.3",
-      "core-js": "npm:core-js@^0.9.10"
-    }
+  "homepage": "https://github.com/vpro/plugin-hbs#readme",
+  "dependencies": {
+    "handlebars": "^4.0.2"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-runtime": "^5.8.25",
+    "eslint": "^1.7.1",
+    "http-server": "^0.8.5",
+    "systemjs": "^0.19.5"
   }
 }

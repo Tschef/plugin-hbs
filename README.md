@@ -1,5 +1,6 @@
 # plugin-hbs
 NPM compatible Handlebars template loader plugin for [System.js](https://github.com/systemjs/systemjs)
+without the need for [JSPM](jspm.io);
 
 ## Installation
 

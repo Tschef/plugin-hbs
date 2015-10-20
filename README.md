@@ -29,10 +29,10 @@ In your modules:
 ```javascript
 import template from './myTemplate.hbs!';
 
-export.renderMyData = function ( viewModel ) {
+export function renderMyData ( viewModel ) {
 
   return template( viewModel );
-};
+}
 ```
 
 In an HTML page:

@@ -40,7 +40,7 @@ In an HTML page:
 ```html
 <script>
 
-    System.import(./myTemplate.hbs!').then( function ( myTemplate ) {
+    System.import('./myTemplate.hbs!').then( function ( myTemplate ) {
 
         document.querySelector('body').innerHTML = myTemplate({ viewModelKey: 'viewModelValue' });
     });

@@ -14,7 +14,7 @@ You have to tell SystemJS to connect this plugin with the right extension.
  
 Use the following map configuration in your SystemJS config:
 
-```javascript
+```
 System.config({
   "map": {
     "hbs: "path/to/plugin-hbs/hbs.js"
@@ -38,12 +38,12 @@ export.renderMyData = function ( viewModel ) {
 In an HTML page:
 
 ```html
-&lt;script&gt;
+<script>
 
     System.import(./myTemplate.hbs!').then( function ( myTemplate ) {
 
         document.querySelector('body').innerHTML = myTemplate({ viewModelKey: 'viewModelValue' });
     });
     
-&lt;/script&gt;
+</script>
 ```

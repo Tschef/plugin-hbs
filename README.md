@@ -14,25 +14,35 @@ You have to tell SystemJS to connect this plugin with the right extension.
 Use the following map configuration in your SystemJS config:
 
 ```javascript
-
 System.config({
   "map": {
     "hbs: "path/to/plugin-hbs/hbs.js"
   }
 });
-
 ```
 
 You can now import your .hbs files as such:
 
-```javascript
-'use strict';
+In your modules:
 
-import {ItemView} from 'marionette';
+```javascript
 import template from './myTemplate.hbs!';
 
-export default ItemView.extend({
-  template,
-  initialize() {}
-});
+export.renderMyData = function ( viewModel ) {
+
+  return template( viewModel );
+};
+```
+
+In an HTML page:
+
+```html
+&lt;script&gt;
+
+    System.import(./myTemplate.hbs!').then( function ( myTemplate ) {
+
+        document.querySelector('body').innerHTML = myTemplate({ viewModelKey: 'viewModelValue' });
+    });
+    
+&lt;/script&gt;
 ```

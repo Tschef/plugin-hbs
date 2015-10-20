@@ -52,3 +52,13 @@ In an HTML page:
     
 </script>
 ```
+
+## development
+
+### code linting
+Run `npm run lint` to lint the plugin's code with [eslint](http://eslint.org/).
+
+### testing
+For testing purposes, use `npm run test-plugin` to start a webserver on
+[localhost:9090](http://localhost:9090). Navigate to the test folder and you'll
+see the plugin in action.

@@ -2,24 +2,27 @@
 NPM compatible [Handlebars](http://handlebarsjs.com/) template loader plugin for 
 [SystemJS](https://github.com/systemjs/systemjs) without the need for [JSPM](http://jspm.io).
 
-## Installation
+## installation
 
 ```bash
 npm install vpro/plugin-hbs
 ```
 
-## Usage
+## usage
 
 You have to tell SystemJS to connect this plugin with the right extension,
-as well as defining a mapping for the Handlebars templating library.
+as well as defining a mapping for the Handlebars templating library and it's
+runtime, the latter being used to make the precompiled templates available
+which also means you have to register partials on that runtime.
  
 Use the following map configuration in your SystemJS config:
 
 ```
 System.config({
-  "map": {
-    "handlebars": "path/to/handlebars/dist/handlebars.js",
-    "hbs: "path/to/plugin-hbs/hbs.js"
+  'map': {
+    'handlebars': 'path/to/handlebars/dist/handlebars.min.js',
+    'handlebars-runtime': 'path/to/handlebars/dist/handlebars.runtime.min.js',
+    'hbs: 'path/to/plugin-hbs/hbs.js'
   }
 });
 ```
@@ -32,7 +35,7 @@ You can now import your .hbs files as such:
 In your modules:
 
 ```javascript
-import template from './myTemplate.hbs!';
+import template from './myTemplate.hbs!'; // or ./myTemplate.html!hbs
 
 export function renderMyData ( viewModel ) {
 
@@ -53,6 +56,20 @@ In an HTML page:
 </script>
 ```
 
+### partials
+To be able to use partials, you will have to register them onto an instance of the 
+Handlebars runtime, because the plugin-hbs precompiles all templates through it.
+
+Example:
+
+```javascript
+import precompiledPartialTemplate from './myPartial.hbs!';
+import HandlebarsRuntime from 'handlebars-runtime';
+
+HandlebarsRuntime.registerPartial( 'myPartial', precompiledPartialTemplate );
+
+```
+
 ## development
 
 ### code linting
@@ -62,3 +79,14 @@ Run `npm run lint` to lint the plugin's code with [eslint](http://eslint.org/).
 For testing purposes, use `npm run test-plugin` to start a webserver on
 [localhost:9090](http://localhost:9090). Navigate to the test folder and you'll
 see the plugin in action.
+
+
+## versions
+
+1.4.0
+Using minified sources and you now need to define the location
+of the handlebars runtime, which means you can decided which one is
+used en use it for partial registering.
+
+1.3.0 
+plugin is now NPM(3) compatible, no need for JSPM

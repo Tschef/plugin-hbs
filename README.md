@@ -83,6 +83,9 @@ see the plugin in action.
 
 ## versions
 
+1.5.0
+Added npm build script that generates an AMD module in /dist/
+
 1.4.0
 Using minified sources and you now need to define the location
 of the handlebars runtime, which means you can decided which one is

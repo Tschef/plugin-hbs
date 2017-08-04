@@ -16,6 +16,6 @@ define(['exports', 'handlebars'], function (exports, _handlebars) {
 
   function translate(load) {
     var precompiled = _handlebars2.default.precompile(load.source);
-    load.source = 'module.exports = require(\'handlebars-runtime\').template(' + precompiled + ');';
+    load.source = 'module.exports = require(\'handlebars/handlebars.runtime\').template(' + precompiled + ');';
   }
 });

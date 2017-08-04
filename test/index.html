@@ -10,12 +10,27 @@
 
     <div class="parsed-template"></div>
 
-    <script src="../node_modules/es6-module-loader/dist/es6-module-loader.js"></script>
-    <script src="../node_modules/systemjs/dist/system.js"></script>
-    <script src="../config.js"></script>
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../jspm.config.js"></script>
     <script>
 
-        System.import('test/test.hbs!').then( function ( testTemplate ) {
+        // uncomment the following to test the dist/hbs.js AMD version
+
+//        SystemJS.config({
+//          packages: {
+//            'hbs': {
+//              'format': 'amd',
+//                'main': 'dist/hbs.js',
+//                "meta": {
+//                  "*.js": {
+//                    "loader": ""
+//                  }
+//                }
+//            }
+//          }
+//        });
+
+        SystemJS.import('test/test.hbs!').then( function ( testTemplate ) {
 
             document.querySelector('.parsed-template' ).innerHTML = testTemplate({ name: prompt('What is your name?') });
         });

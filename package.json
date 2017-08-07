@@ -1,55 +1,53 @@
 {
-  "name": "plugin-hbs",
-  "description": "JSPM beta compatible Handlebars template loader plugin",
-  "version": "2.0.0",
-  "main": "hbs.js",
-  "engines": {
-    "node": ">=6.11.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vpro/plugin-hbs.git"
-  },
-  "scripts": {
-    "test": "http-server -p 9090",
-    "lint": "eslint hbs.js dist/hbs.js --config .eslintrc",
-    "postinstall": "jspm install"
-  },
-  "keywords": [
-    "systemjs",
-     "jspm",
-     "handlebars"
-  ],
-  "contributors": [
-    {
-      "name": "davis"
-    },
-    {
-      "name": "vpro"
-    }
-  ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vpro/plugin-hbs/issues"
-  },
-  "homepage": "https://github.com/vpro/plugin-hbs#readme",
-  "dependencies": {
-    "handlebars": "^4.0.2"
-  },
-  "devDependencies": {
-    "eslint": "~1.7.1",
-    "http-server": "~0.8.5",
-    "jspm": "~0.17.0-beta.42",
-    "rimraf": "~2.5.0"
-  },
-  "jspm": {
-    "name": "hbs",
+    "name": "plugin-hbs",
+    "description": "JSPM beta compatible Handlebars template loader plugin",
+    "version": "2.0.0",
     "main": "hbs.js",
+    "engines": {
+        "node": ">=6.11.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vpro/plugin-hbs.git"
+    },
+    "scripts": {
+        "test": "http-server -p 9090",
+        "lint": "eslint hbs.js dist/hbs.js --config .eslintrc"
+    },
+    "keywords": [
+        "systemjs",
+        "jspm",
+        "handlebars"
+    ],
+    "contributors": [{
+            "name": "davis"
+        },
+        {
+            "name": "vpro"
+        }
+    ],
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vpro/plugin-hbs/issues"
+    },
+    "homepage": "https://github.com/vpro/plugin-hbs#readme",
     "dependencies": {
-      "handlebars": "github:components/handlebars.js@~4.0.10"
+        "handlebars": "^4.0.2"
     },
     "devDependencies": {
-      "plugin-babel": "npm:systemjs-plugin-babel@~0.0.25"
+        "eslint": "~1.7.1",
+        "http-server": "~0.8.5",
+        "jspm": "~0.17.0-beta.42",
+        "rimraf": "~2.5.0"
+    },
+    "jspm": {
+        "name": "hbs",
+        "main": "hbs.js",
+        "dependencies": {
+            "handlebars": "github:components/handlebars.js@~4.0.10"
+        },
+        "devDependencies": {
+            "plugin-babel": "npm:systemjs-plugin-babel@~0.0.25"
+        }
     }
-  }
 }
